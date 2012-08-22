@@ -332,6 +332,12 @@ namespace AgFx
                     }
                     else if (!cacheOnly)
                     {
+                        if (CachePolicy == AgFx.CachePolicy.NoCache || CachePolicy == AgFx.CachePolicy.ValidCacheOnly)
+                        {
+                            _valueReference = null;
+                            value = ValueInternal;
+                        }
+
                         // Data is out of date or not valid - kick off a new load.
                         //
                         Load(false);

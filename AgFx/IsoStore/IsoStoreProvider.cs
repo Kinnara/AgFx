@@ -133,6 +133,14 @@ namespace AgFx.IsoStore {
                     if (isoStore.FileExists(path))
                     {
                         isoStore.DeleteFile(path);
+
+                        try
+                        {
+                            isoStore.DeleteDirectory(Path.GetDirectoryName(path));
+                        }
+                        catch (IsolatedStorageException)
+                        {
+                        }
                     }
                     else
                     {

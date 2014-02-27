@@ -94,6 +94,10 @@ namespace AgFx {
             }
         }
 
+        static DataManager() {
+            RetryTimeout = TimeSpan.FromSeconds(60);
+        }
+
         private DataManager() {            
         }
 
@@ -336,6 +340,11 @@ namespace AgFx {
         /// Set this to true to enable, generate staticstics report with DataManager.GetStatisticsReport.
         /// </summary>
         public static bool ShouldCollectStatistics { get; set; }
+
+        /// <summary>
+        /// Gets or sets the retry timeout.
+        /// </summary>
+        public static TimeSpan RetryTimeout { get; set; }
 
         /// <summary>
         /// Generates a report of the load and deserialize statistics.  This report will detail the following items:

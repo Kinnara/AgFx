@@ -1382,8 +1382,6 @@ namespace AgFx
         /// </summary>
         internal class LiveValueLoader : ValueLoader
         {
-            private static TimeSpan RetryTimeout = TimeSpan.FromSeconds(60);
-
             /// <summary>
             /// If a load fails, we wait 60 seconds before retrying it.  The avoids
             /// reload loops.
@@ -1476,7 +1474,7 @@ namespace AgFx
                 // the live load failed, set our retry limit.
                 //
                 Debug.WriteLine("Live load failed for {0} (ID={2}) Message={1}", exception.ObjectType.Name, exception.Message, exception.LoadContext.Identity);
-                _loadRetryTime = DateTime.Now.Add(RetryTimeout);
+                _loadRetryTime = DateTime.Now.Add(DataManager.RetryTimeout);
                 LoadState = DataLoadState.Failed;
                 OnLoadFailed(exception);
             }

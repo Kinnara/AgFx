@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgFx", "AgFx\AgFx.csproj", "{3ED37B15-A664-4E31-ABD3-CD3522B35E27}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgFx.Controls.Phone", "AgFx.Controls\AgFx.Controls.Phone.csproj", "{1DA986E9-0187-4A22-881D-1AFC93A65294}"
